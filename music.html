@@ -1,0 +1,19 @@
+---
+layout: default
+title: Music
+description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quis reiciendis tempore dignissimos corporis fugiat aliquid sed nulla asperiores explicabo, non praesentium adipisci"
+---
+    <p>{{ page.description }}</p>
+
+{% for album in site.music %}
+	<article>
+		<img src="{{ album.image }}" alt="{{ album.title }}">
+		<a href="{{ album.url }}"><h2>{{ album.title }}</h2></a>
+		<h3>Released: {{ album.date | date:"%Y" }}</h3>
+		<ol>
+			{{ album.description }}
+		</ol>
+	</article>
+{% endfor %}
+
+

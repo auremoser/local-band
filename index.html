@@ -1,0 +1,16 @@
+---
+layout: home
+---
+
+{% for post in paginator.posts %}
+		<article>
+			<span>{{ post.date | date: "%a, %b %d, %y" }}</span>
+			<h2>{{ post.title }}</h2>
+			<p>{{ post.description }}</p>
+		</article>
+{% endfor %}
+
+<div style="margin: 0 auto; text-align: center;">
+		{% include paginator.html %}
+</div>
+		

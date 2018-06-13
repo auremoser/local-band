@@ -1,0 +1,18 @@
+---
+layout: default
+description: "About Us"
+---
+		<p>{{ page.description }}</p>
+		<br>
+
+
+{% assign people = site.people %}
+    {% for person in people %}
+		<article>
+			<a href="{{ person.url }}"><img class="circle" src="{{ person.image | relative_url }}" alt="{{ person.name }} photo"></a>
+			<a href="{{ person.url }}"><h2>{{ person.name }}</h2></a>
+			<h3>{{ person.instruments }}</h3>
+			<p>{{ person.description }}</p>
+		</article>
+    {% endfor %}
+

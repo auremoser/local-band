@@ -1,0 +1,173 @@
+
+# Site settings
+title: The ISPs
+email: admin@admin.insitute
+description: > # this means to ignore newlines until "baseurl:"
+  Welcome to the ISP band website; we're providing music as a service at local clubs in Entertin, WI, since 2015. Learn more about our indie-alt gluten free magic music at left. Check out the party mode button!
+exclude: 
+ - 'node_modules'
+
+# Build settings
+markdown: kramdown
+scss:
+  style: compressed
+
+# Information for compile
+exclude: ["node_modules", "gulpfile.js", "package.json", "Gemfile", "README.md"]
+#
+# If your website is placed in a separate folder on your server please modify
+# this with your folder name, by default is empty.
+# Example: Sera Demo is hosted on projects.gleesik.ro/sera-onepage
+# If I compile Sera Template and I put in /sera-onepage without modifing baseurl
+# than scripts can't be loaded corectly.
+# For this example my site url is: projects.gleesik.ro (This can be just www.example.com)
+# My folder for Demo Website is: /sera-onepage so baseurl: /sera-onepage
+#
+
+logo: assets/LC Simple Logo SM.png
+
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown
+
+paginate: 5
+paginate_path: "/page:num/"
+#repository namespace 
+github: admin.github.io
+repository: admin/admin.github.io
+
+####################################
+######   Optional Features    ######
+####################################
+
+
+####################################
+###########   Plugins    ###########
+####################################
+plugins:
+#  - jekyll-archives # Sorry, not GitHub pages friendly!
+  - jekyll-paginate
+  - jekyll-github-metadata
+  - jekyll-sitemap
+
+
+
+
+#######################################################
+###############   HEADER INFORMATION   ###############
+#######################################################
+# Website language
+lang: en-US
+# Header Title
+header-title: <strong>Master Functional Programming</strong>
+#
+# This is your email adress, contact from send here all emails from contact section
+# IMPORTANT: you can modify contact form from this static template, but now works contact form works with a free external server
+# To configure this contact form, first please send a fictive email afeter you enter below your email and verify that :)
+#
+email: webmaster@ispband.com
+
+####################################
+######  Global Social Links   ######
+####################################
+social:
+  youtube: 'UCEtohQeDqMSebi2yvLMUItg'
+  pinterest: admin
+  facebook: admin
+  twitter: 'lambda_conf'
+  google-plus: admin
+  meetup: 'admin'
+
+#####################################
+#############   Footer   ############
+#####################################
+footer-description: Nulla a tellus at turpis gravida congue non interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi id ornare ante. Cras odio nibh, volutpat.
+footer-copyright-text: admin
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - _events
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore  /docs
+  - /test # ignore  /test
+keep_files:
+  - .git
+  - .svn
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  albums:
+    output: true
+    permalink: /:collection/:name
+  training:
+    output: true
+  people:
+    output: true
+    permalink: /:collection/:name
+  music:
+    output: true
+    permalink: /:collection/:name
+    
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: page
+
+  - scope:
+      path: "_albums"
+      type: albums
+    values:
+      layout: "none"
+
+  - scope:
+      path: "_people"
+      type: people
+    values:
+      layout: "people"
+
+  - scope:
+      path: "_music"
+      type: music
+    values:
+      layout: "music"
+
+

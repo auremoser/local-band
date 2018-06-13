@@ -1,0 +1,17 @@
+---
+#layout: compress
+---
+<!doctype html>
+<html lang="{{ site.lang }}">
+{% include head.html %}
+<body>
+
+{% include header.html %}
+<main>
+	<h1>{{ page.title | default: site.title }}</h1>
+{{ content }}
+	</main>
+{% include footer.html %}
+{% include scripts.html %}
+</body>
+</html>
